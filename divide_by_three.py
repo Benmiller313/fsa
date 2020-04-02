@@ -14,8 +14,12 @@ def main(argv):
         print(help_string)
         sys.exit(1)
 
-    print(DivisionMachine().evaluate(args[0]))
-    sys.exit(0)
+    try:
+        print(DivisionMachine().evaluate(args[0]))
+        sys.exit(0)
+    except ValueError as e:
+        print(e)
+        sys.exit(2)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
